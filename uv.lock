@@ -2,14 +2,10 @@ version = 1
 revision = 3
 requires-python = "==3.11.*"
 resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
+    "sys_platform == 'linux'",
     "sys_platform == 'darwin'",
     "sys_platform != 'darwin' and sys_platform != 'linux'",
 ]
-
-[options]
-prerelease-mode = "allow"
 
 [[package]]
 name = "accelerate"
@@ -22,8 +18,8 @@ dependencies = [
     { name = "psutil" },
     { name = "pyyaml" },
     { name = "safetensors" },
-    { name = "torch", version = "2.8.0", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
-    { name = "torch", version = "2.8.0+cu126", source = { url = "https://download.pytorch.org/whl/cu126/torch-2.8.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "torch", version = "2.4.0", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform != 'linux'" },
+    { name = "torch", version = "2.4.0+cu124", source = { url = "https://download.pytorch.org/whl/cu124/torch-2.4.0%2Bcu124-cp311-cp311-linux_x86_64.whl" }, marker = "sys_platform == 'linux'" },
 ]
 sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/accelerate/0.33.0/accelerate-0.33.0.tar.gz", hash = "sha256:11ba481ed6ea09191775df55ce464aeeba67a024bd0261a44b77b30fb439e26a" }
 wheels = [
@@ -171,15 +167,6 @@ dependencies = [
 sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/anyio/4.13.0/anyio-4.13.0.tar.gz", hash = "sha256:334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc" }
 wheels = [
     { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/anyio/4.13.0/anyio-4.13.0-py3-none-any.whl", hash = "sha256:08b310f9e24a9594186fd75b4f73f4a4152069e3853f1ed8bfbf58369f4ad708" },
-]
-
-[[package]]
-name = "appdirs"
-version = "1.4.4"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/appdirs/1.4.4/appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/appdirs/1.4.4/appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128" },
 ]
 
 [[package]]
@@ -507,8 +494,7 @@ dependencies = [
     { name = "numpy" },
     { name = "packaging" },
     { name = "pandas" },
-    { name = "pyarrow", version = "12.0.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform == 'darwin'" },
-    { name = "pyarrow", version = "23.0.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform != 'darwin'" },
+    { name = "pyarrow" },
     { name = "pyyaml" },
     { name = "requests" },
     { name = "tqdm" },
@@ -543,11 +529,48 @@ wheels = [
 
 [[package]]
 name = "defusedxml"
-version = "0.8.0rc2"
+version = "0.7.1"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/defusedxml/0.8.0rc2/defusedxml-0.8.0rc2.tar.gz", hash = "sha256:138c7d540a78775182206c7c97fe65b246a2f40b29471e1a2f1b0da76e7a3942" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/defusedxml/0.7.1/defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/defusedxml/0.8.0rc2/defusedxml-0.8.0rc2-py2.py3-none-any.whl", hash = "sha256:1c812964311154c3bf4aaf3bc1443b31ee13530b7f255eaaa062c0553c76103d" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/defusedxml/0.7.1/defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61" },
+]
+
+[[package]]
+name = "dgl"
+version = "2.4.0+cu124"
+source = { url = "https://data.dgl.ai/wheels/torch-2.4/cu124/dgl-2.4.0%2Bcu124-cp311-cp311-manylinux1_x86_64.whl" }
+dependencies = [
+    { name = "networkx" },
+    { name = "numpy" },
+    { name = "packaging" },
+    { name = "pandas" },
+    { name = "psutil" },
+    { name = "pydantic" },
+    { name = "pyyaml" },
+    { name = "requests" },
+    { name = "scipy" },
+    { name = "torch", version = "2.4.0", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform != 'linux'" },
+    { name = "torch", version = "2.4.0+cu124", source = { url = "https://download.pytorch.org/whl/cu124/torch-2.4.0%2Bcu124-cp311-cp311-linux_x86_64.whl" }, marker = "sys_platform == 'linux'" },
+    { name = "tqdm" },
+]
+wheels = [
+    { url = "https://data.dgl.ai/wheels/torch-2.4/cu124/dgl-2.4.0%2Bcu124-cp311-cp311-manylinux1_x86_64.whl", hash = "sha256:cb7f30bd08b20ffc336c1e5e3f828854f1b498422bbde37e6119a1652d2f799c" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "networkx", specifier = ">=2.1" },
+    { name = "numpy", specifier = ">=1.14.0" },
+    { name = "packaging" },
+    { name = "pandas" },
+    { name = "psutil", specifier = ">=5.8.0" },
+    { name = "pydantic", specifier = ">=2.0" },
+    { name = "pyyaml" },
+    { name = "requests", specifier = ">=2.19.0" },
+    { name = "scipy", specifier = ">=1.1.0" },
+    { name = "torch", specifier = "<=2.4.0" },
+    { name = "tqdm" },
 ]
 
 [[package]]
@@ -586,18 +609,6 @@ source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amaz
 sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/distlib/0.4.0/distlib-0.4.0.tar.gz", hash = "sha256:feec40075be03a04501a973d81f633735b4b69f98b05450592310c0f401a4e0d" }
 wheels = [
     { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/distlib/0.4.0/distlib-0.4.0-py2.py3-none-any.whl", hash = "sha256:9659f7d87e46584a30b5780e43ac7a2143098441670ff0a49d5f9034c54a6c16" },
-]
-
-[[package]]
-name = "docker-pycreds"
-version = "0.4.0"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-dependencies = [
-    { name = "six" },
-]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/docker-pycreds/0.4.0/docker-pycreds-0.4.0.tar.gz", hash = "sha256:6ce3270bcaf404cc4c3e27e4b6c70d3521deae82fb508767870fdbf772d584d4" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/docker-pycreds/0.4.0/docker_pycreds-0.4.0-py2.py3-none-any.whl", hash = "sha256:7266112468627868005106ec19cd0d722702d2b7d5912a28e19b826c3d37af49" },
 ]
 
 [[package]]
@@ -681,11 +692,11 @@ wheels = [
 
 [[package]]
 name = "filelock"
-version = "3.28.0"
+version = "3.29.0"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/filelock/3.28.0/filelock-3.28.0.tar.gz", hash = "sha256:4ed1010aae813c4ee8d9c660e4792475ee60c4a0ba76073ceaf862bd317e3ca6" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/filelock/3.29.0/filelock-3.29.0.tar.gz", hash = "sha256:69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/filelock/3.28.0/filelock-3.28.0-py3-none-any.whl", hash = "sha256:de9af6712788e7171df1b28b15eba2446c69721433fa427a9bee07b17820a9db" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/filelock/3.29.0/filelock-3.29.0-py3-none-any.whl", hash = "sha256:96f5f6344709aa1572bbf631c640e4ebeeb519e08da902c39a001882f30ac258" },
 ]
 
 [[package]]
@@ -870,18 +881,18 @@ wheels = [
 
 [[package]]
 name = "hf-xet"
-version = "1.5.0.dev1"
+version = "1.4.3"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1.tar.gz", hash = "sha256:a21c9c85869ee122747543dd93471826cc0e9b5f61b11411aabd4adf72e345b1" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3.tar.gz", hash = "sha256:8ddedb73c8c08928c793df2f3401ec26f95be7f7e516a7bee2fbb546f6676113" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1-cp37-abi3-macosx_10_12_x86_64.whl", hash = "sha256:5a180160a120357cabc0cd60167864f110bb8f0b1c38b71e0a93cde13839475e" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:8701d2e1268c78a1c3cd0e4480b74c0a505cfa864269308efae9d73d0e2203f9" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e5480448001f9e59046ac4c463f2e25fb652066605dd183a82d2b5625b939487" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1-cp37-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:14e9773ade3fb48dcfa9f493c8ed065704dd3031d29a5a289fed58b8223f2409" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1-cp37-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:21accf171949d78b18099bf57a4e8490db1ad88c0a4e907f8930c78ffe21f47d" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1-cp37-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:07d8ec5c300a7ce3a39fa8598024992f6d2fcfa167b71cc0cde07abdcd05ca01" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1-cp37-abi3-win_amd64.whl", hash = "sha256:ad32cfd5aa66bdf922b7f8eb9a94eb9f64a8f68a31ffede803060b44bd4060f8" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.5.0.dev1/hf_xet-1.5.0.dev1-cp37-abi3-win_arm64.whl", hash = "sha256:2093091921534e51e13cbeb956550cded7b97aa7ba1d774123c21d9b06f06231" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3-cp37-abi3-macosx_10_12_x86_64.whl", hash = "sha256:d0da85329eaf196e03e90b84c2d0aca53bd4573d097a75f99609e80775f98025" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:e23717ce4186b265f69afa66e6f0069fe7efbf331546f5c313d00e123dc84583" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:fc360b70c815bf340ed56c7b8c63aacf11762a4b099b2fe2c9bd6d6068668c08" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3-cp37-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:39f2d2e9654cd9b4319885733993807aab6de9dfbd34c42f0b78338d6617421f" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3-cp37-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:49ad8a8cead2b56051aa84d7fce3e1335efe68df3cf6c058f22a65513885baac" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3-cp37-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:7716d62015477a70ea272d2d68cd7cad140f61c52ee452e133e139abfe2c17ba" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3-cp37-abi3-win_amd64.whl", hash = "sha256:6b591fcad34e272a5b02607485e4f2a1334aebf1bc6d16ce8eb1eb8978ac2021" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/hf-xet/1.4.3/hf_xet-1.4.3-cp37-abi3-win_arm64.whl", hash = "sha256:7c2c7e20bcfcc946dc67187c203463f5e932e395845d098cc2a93f5b67ca0b47" },
 ]
 
 [[package]]
@@ -952,11 +963,11 @@ wheels = [
 
 [[package]]
 name = "identify"
-version = "2.6.18"
+version = "2.6.19"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/identify/2.6.18/identify-2.6.18.tar.gz", hash = "sha256:873ac56a5e3fd63e7438a7ecbc4d91aca692eb3fefa4534db2b7913f3fc352fd" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/identify/2.6.19/identify-2.6.19.tar.gz", hash = "sha256:6be5020c38fcb07da56c53733538a3081ea5aa70d36a156f83044bfbf9173842" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/identify/2.6.18/identify-2.6.18-py2.py3-none-any.whl", hash = "sha256:8db9d3c8ea9079db92cafb0ebf97abdc09d52e97f4dcf773a2e694048b7cd737" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/identify/2.6.19/identify-2.6.19-py2.py3-none-any.whl", hash = "sha256:20e6a87f786f768c092a721ad107fc9df0eb89347be9396cadf3f4abbd1fb78a" },
 ]
 
 [[package]]
@@ -966,18 +977,6 @@ source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amaz
 sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/idna/3.11/idna-3.11.tar.gz", hash = "sha256:795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902" }
 wheels = [
     { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/idna/3.11/idna-3.11-py3-none-any.whl", hash = "sha256:771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea" },
-]
-
-[[package]]
-name = "importlib-metadata"
-version = "8.7.1"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-dependencies = [
-    { name = "zipp" },
-]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/importlib-metadata/8.7.1/importlib_metadata-8.7.1.tar.gz", hash = "sha256:49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/importlib-metadata/8.7.1/importlib_metadata-8.7.1-py3-none-any.whl", hash = "sha256:5a1f80bf1daa489495071efbb095d75a634cf28a8bc299581244063b53176151" },
 ]
 
 [[package]]
@@ -1328,7 +1327,7 @@ wheels = [
 
 [[package]]
 name = "jupyterlab"
-version = "4.6.0a4"
+version = "4.5.6"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 dependencies = [
     { name = "async-lru" },
@@ -1345,9 +1344,9 @@ dependencies = [
     { name = "tornado" },
     { name = "traitlets" },
 ]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/jupyterlab/4.6.0a4/jupyterlab-4.6.0a4.tar.gz", hash = "sha256:7fea55e8c6d6b3af8f2aab507df826965c18c0dbc7f467c6be508ef5206ad443" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/jupyterlab/4.5.6/jupyterlab-4.5.6.tar.gz", hash = "sha256:642fe2cfe7f0f5922a8a558ba7a0d246c7bc133b708dfe43f7b3a826d163cf42" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/jupyterlab/4.6.0a4/jupyterlab-4.6.0a4-py3-none-any.whl", hash = "sha256:b6c50af64475a2f24233d13c43408f14aecef0f983aa382dc14a4a3ab8a9e561" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/jupyterlab/4.5.6/jupyterlab-4.5.6-py3-none-any.whl", hash = "sha256:d6b3dac883aa4d9993348e0f8e95b24624f75099aed64eab6a4351a9cdd1e580" },
 ]
 
 [[package]]
@@ -1459,32 +1458,32 @@ wheels = [
 
 [[package]]
 name = "lxml"
-version = "6.0.4"
+version = "6.1.0"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4.tar.gz", hash = "sha256:4137516be2a90775f99d8ef80ec0283f8d78b5d8bd4630ff20163b72e7e9abf2" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0.tar.gz", hash = "sha256:bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:3602d57fdb6f744f4c5d0bd49513fe5abbced08af85bba345fc354336667cd47" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:b8c7976c384dcab4bca42f371449fb711e20f1bfce99c135c9b25614aed80e55" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:579e20c120c3d231e53f0376058e4e1926b71ca4f7b77a7a75f82aea7a9b501e" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:7f32a27be5fb286febd16c0d13d4a3aee474d34417bd172e64d76c6a28e2dc14" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:2d53b7cdaa961a4343312964f6c5a150d075a55e95e1338078d413bf38eba8c0" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:0d4cc697347f6c61764b58767109e270d0b4a92aba4a8053a967ed9de23a5ea9" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-manylinux_2_28_i686.whl", hash = "sha256:108b8d6da624133eaa1a6a5bbcb1f116b878ea9fd050a1724792d979251706fb" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-manylinux_2_31_armv7l.whl", hash = "sha256:c087d643746489df06fe3ac03460d235b4b3ae705e25838257510c79f834e50f" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-manylinux_2_38_riscv64.manylinux_2_39_riscv64.whl", hash = "sha256:2063c486f80c32a576112201c93269a09ebeca5b663092112c5fb39b32556340" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:ff016e86ec14ae96253a3834302e0e89981956b73e4e74617eeba4a6a81da08b" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-musllinux_1_2_armv7l.whl", hash = "sha256:0e9ba5bcd75efb8cb4613463e6cfb55b5a76d4143e4cfa06ea027bc6cc696a3e" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-musllinux_1_2_riscv64.whl", hash = "sha256:9a69668bef9268f54a92f2254917df530ca4630a621027437f0e948eb1937e7b" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:280f8e7398bdc48c7366ad375a5586692cd73b269d9e82e6898f9ada70dc0bcb" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-win32.whl", hash = "sha256:a8eddf3c705e00738db695a9a77830f8d57f7d21a54954fbef23a1b8806384ed" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-win_amd64.whl", hash = "sha256:b74d5b391fc49fc3cc213c930f87a7dedf2b4b0755aae4638e91e4501e278430" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-cp311-cp311-win_arm64.whl", hash = "sha256:2f0cf04bafc14b0eebfbc3b5b73b296dd76b5d7640d098c02e75884bb0a70f2b" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-pp311-pypy311_pp73-macosx_10_15_x86_64.whl", hash = "sha256:b29bcca95e82cd201d16c2101085faa2669838f4697fd914b7124a6c77032f80" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-pp311-pypy311_pp73-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:a95e29710ecdf99b446990144598f6117271cb2ec19fd45634aa087892087077" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-pp311-pypy311_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:13085e0174e9c9fa4eb5a6bdfb81646d1f7be07e5895c958e89838afb77630c6" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-pp311-pypy311_pp73-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e205c4869a28ec4447375333072978356cd0eeadd0412c643543238e638b89a3" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-pp311-pypy311_pp73-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:aec26080306a66ad5c62fad0053dd2170899b465137caca7eac4b72bda3588bf" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.0.4/lxml-6.0.4-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:3912221f41d96283b10a7232344351c8511e31f18734c752ed4798c12586ea35" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:cec05be8c876f92a5aa07b01d60bbb4d11cfbdd654cad0561c0d7b5c043a61b9" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:9c03e048b6ce8e77b09c734e931584894ecd58d08296804ca2d0b184c933ce50" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:942454ff253da14218f972b23dc72fa4edf6c943f37edd19cd697618b626fac5" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:d036ee7b99d5148072ac7c9b847193decdfeac633db350363f7bce4fff108f0e" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:3ae5d8d5427f3cc317e7950f2da7ad276df0cfa37b8de2f5658959e618ea8512" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:363e47283bde87051b821826e71dde47f107e08614e1aa312ba0c5711e77738c" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-manylinux_2_28_i686.whl", hash = "sha256:f504d861d9f2a8f94020130adac88d66de93841707a23a86244263d1e54682f5" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-manylinux_2_31_armv7l.whl", hash = "sha256:23a5dc68e08ed13331d61815c08f260f46b4a60fdd1640bbeb82cf89a9d90289" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-manylinux_2_38_riscv64.manylinux_2_39_riscv64.whl", hash = "sha256:f15401d8d3dbf239e23c818afc10c7207f7b95f9a307e092122b6f86dd43209a" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:fcf3da95e93349e0647d48d4b36a12783105bcc74cb0c416952f9988410846a3" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-musllinux_1_2_armv7l.whl", hash = "sha256:0d082495c5fcf426e425a6e28daaba1fcb6d8f854a4ff01effb1f1f381203eb9" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-musllinux_1_2_riscv64.whl", hash = "sha256:e3c4f84b24a1fcba435157d111c4b755099c6ff00a3daee1ad281817de75ed11" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:976a6b39b1b13e8c354ad8d3f261f3a4ac6609518af91bdb5094760a08f132c4" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-win32.whl", hash = "sha256:857efde87d365706590847b916baff69c0bc9252dc5af030e378c9800c0b10e3" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-win_amd64.whl", hash = "sha256:183bfb45a493081943be7ea2b5adfc2b611e1cf377cefa8b8a8be404f45ef9a7" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-cp311-cp311-win_arm64.whl", hash = "sha256:19f4164243fc206d12ed3d866e80e74f5bc3627966520da1a5f97e42c32a3f39" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-pp311-pypy311_pp73-macosx_10_15_x86_64.whl", hash = "sha256:546b66c0dd1bb8d9fa89d7123e5fa19a8aff3a1f2141eb22df96112afb17b842" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-pp311-pypy311_pp73-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:5cfa1a34df366d9dc0d5eaf420f4cf2bb1e1bebe1066d1c2fc28c179f8a4004c" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-pp311-pypy311_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:db88156fcf544cdbf0d95588051515cfdfd4c876fc66444eb98bceb5d6db76de" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-pp311-pypy311_pp73-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:07f98f5496f96bf724b1e3c933c107f0cbf2745db18c03d2e13a291c3afd2635" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-pp311-pypy311_pp73-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:4642e04449a1e164b5ff71ffd901ddb772dfabf5c9adf1b7be5dffe1212bc037" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/lxml/6.1.0/lxml-6.1.0-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:7da13bb6fbadfafb474e0226a30570a3445cfd47c86296f2446dafbd77079ace" },
 ]
 
 [[package]]
@@ -1736,7 +1735,7 @@ wheels = [
 
 [[package]]
 name = "notebook"
-version = "7.6.0a4"
+version = "7.5.5"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 dependencies = [
     { name = "jupyter-server" },
@@ -1745,9 +1744,9 @@ dependencies = [
     { name = "notebook-shim" },
     { name = "tornado" },
 ]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/notebook/7.6.0a4/notebook-7.6.0a4.tar.gz", hash = "sha256:c98bc147508115a0533a6ca19b54b86193f64e1ffef155cbc6155c8b42797401" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/notebook/7.5.5/notebook-7.5.5.tar.gz", hash = "sha256:dc0bfab0f2372c8278c457423d3256c34154ac2cc76bf20e9925260c461013c3" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/notebook/7.6.0a4/notebook-7.6.0a4-py3-none-any.whl", hash = "sha256:48e9d49ac84e0fe5522143060545feb98af2d1f5eb2be1b5fb891c2947a6b406" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/notebook/7.5.5/notebook-7.5.5-py3-none-any.whl", hash = "sha256:a7c14dbeefa6592e87f72290ca982e0c10f5bbf3786be2a600fda9da2764a2b8" },
 ]
 
 [[package]]
@@ -1813,301 +1812,109 @@ wheels = [
 
 [[package]]
 name = "nvidia-cublas-cu12"
-version = "12.6.4.1"
+version = "12.4.2.65"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cublas-cu12/12.6.4.1/nvidia_cublas_cu12-12.6.4.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:08ed2686e9875d01b58e3cb379c6896df8e76c75e0d4a7f7dace3d7b6d9ef8eb" },
-]
-
-[[package]]
-name = "nvidia-cublas-cu12"
-version = "12.8.4.1"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cublas-cu12/12.8.4.1/nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl", hash = "sha256:8ac4e771d5a348c551b2a426eda6193c19aa630236b418086020df5ba9667142" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cublas-cu12/12.4.2.65/nvidia_cublas_cu12-12.4.2.65-py3-none-manylinux2014_x86_64.whl", hash = "sha256:14c9ae3f7711225a4f9f8f46481947a30329f92b7533ae90f8ff22c61ae54a87" },
 ]
 
 [[package]]
 name = "nvidia-cuda-cupti-cu12"
-version = "12.6.80"
+version = "12.4.99"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-cupti-cu12/12.6.80/nvidia_cuda_cupti_cu12-12.6.80-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:6768bad6cab4f19e8292125e5f1ac8aa7d1718704012a0e3272a6f61c4bce132" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-cupti-cu12/12.6.80/nvidia_cuda_cupti_cu12-12.6.80-py3-none-manylinux2014_x86_64.whl", hash = "sha256:a3eff6cdfcc6a4c35db968a06fcadb061cbc7d6dde548609a941ff8701b98b73" },
-]
-
-[[package]]
-name = "nvidia-cuda-cupti-cu12"
-version = "12.8.90"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-cupti-cu12/12.8.90/nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:ea0cb07ebda26bb9b29ba82cda34849e73c166c18162d3913575b0c9db9a6182" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-cupti-cu12/12.4.99/nvidia_cuda_cupti_cu12-12.4.99-py3-none-manylinux2014_x86_64.whl", hash = "sha256:f3bb2e216f9ca073d11c2e087f59676bd315d84f6fc27d01a8609f6ead957e18" },
 ]
 
 [[package]]
 name = "nvidia-cuda-nvrtc-cu12"
-version = "12.6.77"
+version = "12.4.99"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-nvrtc-cu12/12.6.77/nvidia_cuda_nvrtc_cu12-12.6.77-py3-none-manylinux2014_x86_64.whl", hash = "sha256:35b0cc6ee3a9636d5409133e79273ce1f3fd087abb0532d2d2e8fff1fe9efc53" },
-]
-
-[[package]]
-name = "nvidia-cuda-nvrtc-cu12"
-version = "12.8.93"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-nvrtc-cu12/12.8.93/nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl", hash = "sha256:a7756528852ef889772a84c6cd89d41dfa74667e24cca16bb31f8f061e3e9994" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-nvrtc-cu12/12.4.99/nvidia_cuda_nvrtc_cu12-12.4.99-py3-none-manylinux2014_x86_64.whl", hash = "sha256:0f488eb03e10bd1551bae75bdc1ca8771218889a0b9746a00c97e5a2ec8bbd3e" },
 ]
 
 [[package]]
 name = "nvidia-cuda-runtime-cu12"
-version = "12.6.77"
+version = "12.4.99"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-runtime-cu12/12.6.77/nvidia_cuda_runtime_cu12-12.6.77-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:ba3b56a4f896141e25e19ab287cd71e52a6a0f4b29d0d31609f60e3b4d5219b7" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-runtime-cu12/12.6.77/nvidia_cuda_runtime_cu12-12.6.77-py3-none-manylinux2014_x86_64.whl", hash = "sha256:a84d15d5e1da416dd4774cb42edf5e954a3e60cc945698dc1d5be02321c44dc8" },
-]
-
-[[package]]
-name = "nvidia-cuda-runtime-cu12"
-version = "12.8.90"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-runtime-cu12/12.8.90/nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:adade8dcbd0edf427b7204d480d6066d33902cab2a4707dcfc48a2d0fd44ab90" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cuda-runtime-cu12/12.4.99/nvidia_cuda_runtime_cu12-12.4.99-py3-none-manylinux2014_x86_64.whl", hash = "sha256:1454a7c101976d3a9ade86040d01c4e57e8f6396c35b13f7a42c787dab145bed" },
 ]
 
 [[package]]
 name = "nvidia-cudnn-cu12"
-version = "9.10.2.21"
+version = "9.1.0.70"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cublas-cu12", version = "12.8.4.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cublas-cu12", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cudnn-cu12/9.10.2.21/nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl", hash = "sha256:949452be657fa16687d0930933f032835951ef0892b37d2d53824d1a84dc97a8" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cudnn-cu12/9.1.0.70/nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl", hash = "sha256:165764f44ef8c61fcdfdfdbe769d687e06374059fbb388b6c89ecb0e28793a6f" },
 ]
 
 [[package]]
 name = "nvidia-cufft-cu12"
-version = "11.3.0.4"
+version = "11.2.0.44"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
-dependencies = [
-    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cufft-cu12/11.3.0.4/nvidia_cufft_cu12-11.3.0.4-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:ccba62eb9cef5559abd5e0d54ceed2d9934030f51163df018532142a8ec533e5" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cufft-cu12/11.3.0.4/nvidia_cufft_cu12-11.3.0.4-py3-none-manylinux2014_x86_64.whl", hash = "sha256:768160ac89f6f7b459bee747e8d175dbf53619cfe74b2a5636264163138013ca" },
-]
-
-[[package]]
-name = "nvidia-cufft-cu12"
-version = "11.3.3.83"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-dependencies = [
-    { name = "nvidia-nvjitlink-cu12", version = "12.8.93", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' and sys_platform == 'linux'" },
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cufft-cu12/11.3.3.83/nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:4d2dd21ec0b88cf61b62e6b43564355e5222e4a3fb394cac0db101f2dd0d4f74" },
-]
-
-[[package]]
-name = "nvidia-cufile-cu12"
-version = "1.11.1.6"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cufile-cu12/1.11.1.6/nvidia_cufile_cu12-1.11.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:cc23469d1c7e52ce6c1d55253273d32c565dd22068647f3aa59b3c6b005bf159" },
-]
-
-[[package]]
-name = "nvidia-cufile-cu12"
-version = "1.13.1.3"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cufile-cu12/1.13.1.3/nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:1d069003be650e131b21c932ec3d8969c1715379251f8d23a1860554b1cb24fc" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cufft-cu12/11.2.0.44/nvidia_cufft_cu12-11.2.0.44-py3-none-manylinux2014_x86_64.whl", hash = "sha256:daece17ff16751d7fa9fa1e60b80ec9a0425c3cb6b238107c7222114fab3e6f1" },
 ]
 
 [[package]]
 name = "nvidia-curand-cu12"
-version = "10.3.7.77"
+version = "10.3.5.119"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-curand-cu12/10.3.7.77/nvidia_curand_cu12-10.3.7.77-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:a42cd1344297f70b9e39a1e4f467a4e1c10f1da54ff7a85c12197f6c652c8bdf" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-curand-cu12/10.3.7.77/nvidia_curand_cu12-10.3.7.77-py3-none-manylinux2014_x86_64.whl", hash = "sha256:99f1a32f1ac2bd134897fc7a203f779303261268a65762a623bf30cc9fe79117" },
-]
-
-[[package]]
-name = "nvidia-curand-cu12"
-version = "10.3.9.90"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-curand-cu12/10.3.9.90/nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl", hash = "sha256:b32331d4f4df5d6eefa0554c565b626c7216f87a06a4f56fab27c3b68a830ec9" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-curand-cu12/10.3.5.119/nvidia_curand_cu12-10.3.5.119-py3-none-manylinux2014_x86_64.whl", hash = "sha256:9e7ad2425cb1a787a595c6ad23cb9437bf8cff99b6570b7c16d42c61ba427504" },
 ]
 
 [[package]]
 name = "nvidia-cusolver-cu12"
-version = "11.7.1.2"
+version = "11.6.0.99"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 dependencies = [
-    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cusparse-cu12", version = "12.5.4.2", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cublas-cu12", marker = "sys_platform == 'linux'" },
+    { name = "nvidia-cusparse-cu12", marker = "sys_platform == 'linux'" },
+    { name = "nvidia-nvjitlink-cu12", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusolver-cu12/11.7.1.2/nvidia_cusolver_cu12-11.7.1.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:e9e49843a7707e42022babb9bcfa33c29857a93b88020c4e4434656a655b698c" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusolver-cu12/11.7.1.2/nvidia_cusolver_cu12-11.7.1.2-py3-none-manylinux2014_x86_64.whl", hash = "sha256:6cf28f17f64107a0c4d7802be5ff5537b2130bfc112f25d5a30df227058ca0e6" },
-]
-
-[[package]]
-name = "nvidia-cusolver-cu12"
-version = "11.7.3.90"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-dependencies = [
-    { name = "nvidia-cublas-cu12", version = "12.8.4.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cusparse-cu12", version = "12.5.8.93", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-nvjitlink-cu12", version = "12.8.93", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' and sys_platform == 'linux'" },
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusolver-cu12/11.7.3.90/nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl", hash = "sha256:4376c11ad263152bd50ea295c05370360776f8c3427b30991df774f9fb26c450" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusolver-cu12/11.6.0.99/nvidia_cusolver_cu12-11.6.0.99-py3-none-manylinux2014_x86_64.whl", hash = "sha256:30693d3865ae3f5a6aacf46e42549fb2d1fbb15b0189bc14fc0b2894e173769f" },
 ]
 
 [[package]]
 name = "nvidia-cusparse-cu12"
-version = "12.5.4.2"
+version = "12.3.0.142"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-nvjitlink-cu12", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusparse-cu12/12.5.4.2/nvidia_cusparse_cu12-12.5.4.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:7556d9eca156e18184b94947ade0fba5bb47d69cec46bf8660fd2c71a4b48b73" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusparse-cu12/12.5.4.2/nvidia_cusparse_cu12-12.5.4.2-py3-none-manylinux2014_x86_64.whl", hash = "sha256:23749a6571191a215cb74d1cdbff4a86e7b19f1200c071b3fcf844a5bea23a2f" },
-]
-
-[[package]]
-name = "nvidia-cusparse-cu12"
-version = "12.5.8.93"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-dependencies = [
-    { name = "nvidia-nvjitlink-cu12", version = "12.8.93", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' and sys_platform == 'linux'" },
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusparse-cu12/12.5.8.93/nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:1ec05d76bbbd8b61b06a80e1eaf8cf4959c3d4ce8e711b65ebd0443bb0ebb13b" },
-]
-
-[[package]]
-name = "nvidia-cusparselt-cu12"
-version = "0.7.1"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusparselt-cu12/0.7.1/nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl", hash = "sha256:f1bb701d6b930d5a7cea44c19ceb973311500847f81b634d802b7b539dc55623" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-cusparse-cu12/12.3.0.142/nvidia_cusparse_cu12-12.3.0.142-py3-none-manylinux2014_x86_64.whl", hash = "sha256:364106d1d9825901dc70fb7d19ef6fdd0f534627b824abfea494abe319c1402a" },
 ]
 
 [[package]]
 name = "nvidia-nccl-cu12"
-version = "2.27.3"
+version = "2.20.5"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nccl-cu12/2.27.3/nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:adf27ccf4238253e0b826bce3ff5fa532d65fc42322c8bfdfaf28024c0fbe039" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nccl-cu12/2.20.5/nvidia_nccl_cu12-2.20.5-py3-none-manylinux2014_x86_64.whl", hash = "sha256:057f6bf9685f75215d0c53bf3ac4a10b3e6578351de307abad9e18a99182af56" },
 ]
 
 [[package]]
 name = "nvidia-nvjitlink-cu12"
-version = "12.6.85"
+version = "12.4.99"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nvjitlink-cu12/12.6.85/nvidia_nvjitlink_cu12-12.6.85-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl", hash = "sha256:eedc36df9e88b682efe4309aa16b5b4e78c2407eac59e8c10a6a47535164369a" },
-]
-
-[[package]]
-name = "nvidia-nvjitlink-cu12"
-version = "12.8.93"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nvjitlink-cu12/12.8.93/nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl", hash = "sha256:81ff63371a7ebd6e6451970684f916be2eab07321b73c9d244dc2b4da7f73b88" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nvjitlink-cu12/12.4.99/nvidia_nvjitlink_cu12-12.4.99-py3-none-manylinux2014_x86_64.whl", hash = "sha256:c6428836d20fe7e327191c175791d38570e10762edc588fb46749217cd444c74" },
 ]
 
 [[package]]
 name = "nvidia-nvtx-cu12"
-version = "12.6.77"
+version = "12.4.99"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nvtx-cu12/12.6.77/nvidia_nvtx_cu12-12.6.77-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:b90bed3df379fa79afbd21be8e04a0314336b8ae16768b58f2d34cb1d04cd7d2" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nvtx-cu12/12.6.77/nvidia_nvtx_cu12-12.6.77-py3-none-manylinux2014_x86_64.whl", hash = "sha256:6574241a3ec5fdc9334353ab8c479fe75841dbe8f4532a8fc97ce63503330ba1" },
-]
-
-[[package]]
-name = "nvidia-nvtx-cu12"
-version = "12.8.90"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-]
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nvtx-cu12/12.8.90/nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:5b17e2001cc0d751a5bc2c6ec6d26ad95913324a4adb86788c944f8ce9ba441f" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/nvidia-nvtx-cu12/12.4.99/nvidia_nvtx_cu12-12.4.99-py3-none-manylinux2014_x86_64.whl", hash = "sha256:d2a2d331e0c233b53f72c6940814d492177a3c17d268bde278cf41bdda95b054" },
 ]
 
 [[package]]
@@ -2145,46 +1952,6 @@ dependencies = [
 sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/openpyxl/3.1.4/openpyxl-3.1.4.tar.gz", hash = "sha256:8d2c8adf5d20d6ce8f9bca381df86b534835e974ed0156dacefa76f68c1d69fb" }
 wheels = [
     { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/openpyxl/3.1.4/openpyxl-3.1.4-py2.py3-none-any.whl", hash = "sha256:ec17f6483f2b8f7c88c57e5e5d3b0de0e3fb9ac70edc084d28e864f5b33bbefd" },
-]
-
-[[package]]
-name = "opentelemetry-api"
-version = "1.41.0"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-dependencies = [
-    { name = "importlib-metadata" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/opentelemetry-api/1.41.0/opentelemetry_api-1.41.0.tar.gz", hash = "sha256:9421d911326ec12dee8bc933f7839090cad7a3f13fcfb0f9e82f8174dc003c09" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/opentelemetry-api/1.41.0/opentelemetry_api-1.41.0-py3-none-any.whl", hash = "sha256:0e77c806e6a89c9e4f8d372034622f3e1418a11bdbe1c80a50b3d3397ad0fa4f" },
-]
-
-[[package]]
-name = "opentelemetry-sdk"
-version = "1.41.0"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-dependencies = [
-    { name = "opentelemetry-api" },
-    { name = "opentelemetry-semantic-conventions" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/opentelemetry-sdk/1.41.0/opentelemetry_sdk-1.41.0.tar.gz", hash = "sha256:7bddf3961131b318fc2d158947971a8e37e38b1cd23470cfb72b624e7cc108bd" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/opentelemetry-sdk/1.41.0/opentelemetry_sdk-1.41.0-py3-none-any.whl", hash = "sha256:a596f5687964a3e0d7f8edfdcf5b79cbca9c93c7025ebf5fb00f398a9443b0bd" },
-]
-
-[[package]]
-name = "opentelemetry-semantic-conventions"
-version = "0.62b0"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-dependencies = [
-    { name = "opentelemetry-api" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/opentelemetry-semantic-conventions/0.62b0/opentelemetry_semantic_conventions-0.62b0.tar.gz", hash = "sha256:cbfb3c8fc259575cf68a6e1b94083cc35adc4a6b06e8cf431efa0d62606c0097" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/opentelemetry-semantic-conventions/0.62b0/opentelemetry_semantic_conventions-0.62b0-py3-none-any.whl", hash = "sha256:0ddac1ce59eaf1a827d9987ab60d9315fb27aea23304144242d1fcad9e16b489" },
 ]
 
 [[package]]
@@ -2262,12 +2029,6 @@ sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.
 wheels = [
     { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/parso/0.8.6/parso-0.8.6-py2.py3-none-any.whl", hash = "sha256:2c549f800b70a5c4952197248825584cb00f033b29c692671d3bf08bf380baff" },
 ]
-
-[[package]]
-name = "pathtools"
-version = "0.1.2"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pathtools/0.1.2/pathtools-0.1.2.tar.gz", hash = "sha256:7c35c5421a39bb82e58018febd90e3b6e5db34c5443aaaf742b3f33d4655f1c0" }
 
 [[package]]
 name = "patsy"
@@ -2459,34 +2220,16 @@ wheels = [
 name = "pyarrow"
 version = "12.0.1"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "sys_platform == 'darwin'",
-]
 dependencies = [
-    { name = "numpy", marker = "sys_platform == 'darwin'" },
+    { name = "numpy" },
 ]
 sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/12.0.1/pyarrow-12.0.1.tar.gz", hash = "sha256:cce317fc96e5b71107bf1f9f184d5e54e2bd14bbf3f9a3d62819961f0af86fec" }
 wheels = [
     { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/12.0.1/pyarrow-12.0.1-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:749be7fd2ff260683f9cc739cb862fb11be376de965a2a8ccbf2693b098db6c7" },
     { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/12.0.1/pyarrow-12.0.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:6895b5fb74289d055c43db3af0de6e16b07586c45763cb5e558d38b86a91e3a7" },
-]
-
-[[package]]
-name = "pyarrow"
-version = "23.0.1"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
-    "sys_platform != 'darwin' and sys_platform != 'linux'",
-]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/23.0.1/pyarrow-23.0.1.tar.gz", hash = "sha256:b8c5873e33440b2bc2f4a79d2b47017a89c5a24116c055625e6f2ee50523f019" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/23.0.1/pyarrow-23.0.1-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:fed7020203e9ef273360b9e45be52a2a47d3103caf156a30ace5247ffb51bdbd" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/23.0.1/pyarrow-23.0.1-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:26d50dee49d741ac0e82185033488d28d35be4d763ae6f321f97d1140eb7a0e9" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/23.0.1/pyarrow-23.0.1-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:3c30143b17161310f151f4a2bcfe41b5ff744238c1039338779424e38579d701" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/23.0.1/pyarrow-23.0.1-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:db2190fa79c80a23fdd29fef4b8992893f024ae7c17d2f5f4db7171fa30c2c78" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/23.0.1/pyarrow-23.0.1-cp311-cp311-win_amd64.whl", hash = "sha256:f00f993a8179e0e1c9713bcc0baf6d6c01326a406a9c23495ec1ba9c9ebf2919" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/12.0.1/pyarrow-12.0.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1887bdae17ec3b4c046fcf19951e71b6a619f39fa674f9881216173566c8f718" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/12.0.1/pyarrow-12.0.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e2c9cb8eeabbadf5fcfc3d1ddea616c7ce893db2ce4dcef0ac13b099ad7ca082" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/pyarrow/12.0.1/pyarrow-12.0.1-cp311-cp311-win_amd64.whl", hash = "sha256:ce4aebdf412bd0eeb800d8e47db854f9f9f7e2f5a0220440acf219ddfddd4f63" },
 ]
 
 [[package]]
@@ -2865,6 +2608,7 @@ name = "rgfn"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "dgl" },
     { name = "dgllife" },
     { name = "einops" },
     { name = "gin-config" },
@@ -2879,11 +2623,14 @@ dependencies = [
     { name = "pandas" },
     { name = "papermill" },
     { name = "pre-commit" },
+    { name = "pyarrow" },
     { name = "pydantic" },
     { name = "pytdc" },
     { name = "pytest" },
     { name = "rdkit" },
+    { name = "setuptools" },
     { name = "torch-geometric" },
+    { name = "torchdata" },
     { name = "torchmetrics" },
     { name = "tqdm" },
     { name = "typing-extensions" },
@@ -2893,13 +2640,13 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
-cu126 = [
-    { name = "torch", version = "2.8.0", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
-    { name = "torch", version = "2.8.0+cu126", source = { url = "https://download.pytorch.org/whl/cu126/torch-2.8.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+cu124 = [
+    { name = "torch", version = "2.4.0+cu124", source = { url = "https://download.pytorch.org/whl/cu124/torch-2.4.0%2Bcu124-cp311-cp311-linux_x86_64.whl" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "dgl", url = "https://data.dgl.ai/wheels/torch-2.4/cu124/dgl-2.4.0%2Bcu124-cp311-cp311-manylinux1_x86_64.whl" },
     { name = "dgllife", specifier = "==0.3.2" },
     { name = "einops", specifier = ">=0.8.0" },
     { name = "gin-config", specifier = "==0.5.0" },
@@ -2914,21 +2661,23 @@ requires-dist = [
     { name = "pandas", specifier = "==2.1.4" },
     { name = "papermill", specifier = "==2.4.0" },
     { name = "pre-commit", specifier = "==3.5.0" },
+    { name = "pyarrow", specifier = "<13.0.0" },
     { name = "pydantic", specifier = "==2.6.3" },
     { name = "pytdc", specifier = ">=1.0.6" },
     { name = "pytest", specifier = "==7.4.2" },
     { name = "rdkit", specifier = "==2023.9.5" },
-    { name = "torch", marker = "python_full_version == '3.11.*' and platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'cu126'", url = "https://download.pytorch.org/whl/cu126/torch-2.8.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl" },
-    { name = "torch", marker = "extra == 'cu126'", specifier = "==2.8.0" },
+    { name = "setuptools", specifier = "<81" },
+    { name = "torch", marker = "python_full_version == '3.11.*' and platform_machine == 'x86_64' and sys_platform == 'linux' and extra == 'cu124'", url = "https://download.pytorch.org/whl/cu124/torch-2.4.0%2Bcu124-cp311-cp311-linux_x86_64.whl" },
     { name = "torch-geometric", specifier = "==2.5.3" },
+    { name = "torchdata", specifier = "==0.7.1" },
     { name = "torchmetrics", specifier = "==1.2.0" },
     { name = "tqdm", specifier = "==4.66.3" },
     { name = "typing-extensions", specifier = ">=4.10.0" },
-    { name = "wandb", specifier = "==0.15.12" },
+    { name = "wandb", specifier = ">=0.18.0" },
     { name = "wurlitzer", specifier = "==3.1.0" },
     { name = "xlsxwriter", specifier = "==3.2.0" },
 ]
-provides-extras = ["cu126"]
+provides-extras = ["cu124"]
 
 [[package]]
 name = "rpds-py"
@@ -2981,26 +2730,24 @@ wheels = [
 
 [[package]]
 name = "safetensors"
-version = "0.8.0rc0"
+version = "0.7.0"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0.tar.gz", hash = "sha256:b4168a839ff287dc26b0d843e1760962b2e92ed5645f95e8ab3f4b9401807e6a" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0.tar.gz", hash = "sha256:07663963b67e8bd9f0b8ad15bb9163606cd27cc5a1b96235a50d8369803b96b0" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-macosx_10_12_x86_64.whl", hash = "sha256:c1e7a6a1c0dd0128888bc47aca0a9625855673f44f275bf4073088563bf7121b" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:c052d1706567487bc103088fe02daf05132dbccbbc3d798753541b66eb37fb14" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:79547625fa84f3a9b28b933e44c67d012edf22a0c7170ed68835b9f467dda836" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:a132d3cf5f63c3f02b82c4abf65c58d33a8422199ae34e09a9a7edb661bd2ca9" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:d42f6c44773901ce1a021d2372747a559e9ec5aa59d044c0d711c273bff21c67" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:2b40d25911c5f241cad874ad1ea4100a9a9e3c2d469a73a38b47af759d239f44" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bf0d366f75f63867f1ede90f87090450c7cec320da1fc2a597f9bb8cb73460db" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-manylinux_2_31_riscv64.whl", hash = "sha256:50c56d7b6a2f44c3f4ab130bfeb6a8a51ce72bec152805f9c5a46bdf6addb6c5" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:94d9c0d569a124fe3074b9934031c2cdcfab12d4d7b64ae17343fac4a92081e8" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:b4fcccda047df747e2463744428cba352d99527c4e52545d07f8c3a8583136f1" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-musllinux_1_2_armv7l.whl", hash = "sha256:2ef8ab6704ea895cb13c89d5825f49e87328cac2093e7e45fb3cb615bd457fb2" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-musllinux_1_2_i686.whl", hash = "sha256:35bf158d1555df7a529c844ae8ab89355c9df34546de0f94c47d538902bcc07c" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:98b0f6f2a14a6bde7f6acaa5f0381baef9a87c6a3124338affe4e4bb40bf826b" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-win32.whl", hash = "sha256:7e7cc49c69d8df5aaaf332532cd636609727599f81294bf4e5de56a2e3b70a10" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-win_amd64.whl", hash = "sha256:d6532e381c492f5a6b4e82706b232f003e9e697b77d6c2eb7e806d11b578d00b" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.8.0rc0/safetensors-0.8.0rc0-cp310-abi3-win_arm64.whl", hash = "sha256:b7f8180f8c119dce85da7913904ccf4a0227adf095eb63f1732a6729c2672cb1" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:c82f4d474cf725255d9e6acf17252991c3c8aac038d6ef363a4bf8be2f6db517" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:94fd4858284736bb67a897a41608b5b0c2496c9bdb3bf2af1fa3409127f20d57" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e07d91d0c92a31200f25351f4acb2bc6aff7f48094e13ebb1d0fb995b54b6542" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:8469155f4cb518bafb4acf4865e8bb9d6804110d2d9bdcaa78564b9fd841e104" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:54bef08bf00a2bff599982f6b08e8770e09cc012d7bba00783fc7ea38f1fb37d" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:42cb091236206bb2016d245c377ed383aa7f78691748f3bb6ee1bfa51ae2ce6a" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dac7252938f0696ddea46f5e855dd3138444e82236e3be475f54929f0c510d48" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:1d060c70284127fa805085d8f10fbd0962792aed71879d00864acda69dbab981" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:cdab83a366799fa730f90a4ebb563e494f28e9e92c4819e556152ad55e43591b" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-musllinux_1_2_armv7l.whl", hash = "sha256:672132907fcad9f2aedcb705b2d7b3b93354a2aec1b2f706c4db852abe338f85" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-musllinux_1_2_i686.whl", hash = "sha256:5d72abdb8a4d56d4020713724ba81dac065fedb7f3667151c4a637f1d3fb26c0" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:b0f6d66c1c538d5a94a73aa9ddca8ccc4227e6c9ff555322ea40bdd142391dd4" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-win32.whl", hash = "sha256:c74af94bf3ac15ac4d0f2a7c7b4663a15f8c2ab15ed0fc7531ca61d0835eccba" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/safetensors/0.7.0/safetensors-0.7.0-cp38-abi3-win_amd64.whl", hash = "sha256:d1239932053f56f3456f32eb9625590cc7582e905021f94636202a864d470755" },
 ]
 
 [[package]]
@@ -3101,16 +2848,15 @@ wheels = [
 
 [[package]]
 name = "sentry-sdk"
-version = "3.0.0a7"
+version = "2.58.0"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 dependencies = [
     { name = "certifi" },
-    { name = "opentelemetry-sdk" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/sentry-sdk/3.0.0a7/sentry_sdk-3.0.0a7.tar.gz", hash = "sha256:439a858d409b84407560df6b7ebb760acd9ad3d14e05cd919ae36b204e411cb2" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/sentry-sdk/2.58.0/sentry_sdk-2.58.0.tar.gz", hash = "sha256:c1144d947352d54e5b7daa63596d9f848adf684989c06c4f5a659f0c85a18f6f" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/sentry-sdk/3.0.0a7/sentry_sdk-3.0.0a7-py2.py3-none-any.whl", hash = "sha256:ada791a77c2d489e07b04c068e0fcacd6bbcfe1cb40b5f303207738baf38e868" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/sentry-sdk/2.58.0/sentry_sdk-2.58.0-py2.py3-none-any.whl", hash = "sha256:688d1c704ddecf382ea3326f21a67453d4caa95592d722b7c780a36a9d23109e" },
 ]
 
 [[package]]
@@ -3123,33 +2869,12 @@ wheels = [
 ]
 
 [[package]]
-name = "setproctitle"
-version = "1.3.7"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7.tar.gz", hash = "sha256:bc2bc917691c1537d5b9bca1468437176809c7e11e5694ca79a9ca12345dcb9e" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:a600eeb4145fb0ee6c287cb82a2884bd4ec5bbb076921e287039dcc7b7cc6dd0" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:97a090fed480471bb175689859532709e28c085087e344bca45cf318034f70c4" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:1607b963e7b53e24ec8a2cb4e0ab3ae591d7c6bf0a160feef0551da63452b37f" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:a20fb1a3974e2dab857870cf874b325b8705605cb7e7e8bcbb915bca896f52a9" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl", hash = "sha256:f8d961bba676e07d77665204f36cffaa260f526e7b32d07ab3df6a2c1dfb44ba" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:db0fd964fbd3a9f8999b502f65bd2e20883fdb5b1fae3a424e66db9a793ed307" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-musllinux_1_2_ppc64le.whl", hash = "sha256:db116850fcf7cca19492030f8d3b4b6e231278e8fe097a043957d22ce1bdf3ee" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:316664d8b24a5c91ee244460bdaf7a74a707adaa9e14fbe0dc0a53168bb9aba1" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-win32.whl", hash = "sha256:b74774ca471c86c09b9d5037c8451fff06bb82cd320d26ae5a01c758088c0d5d" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-cp311-cp311-win_amd64.whl", hash = "sha256:acb9097213a8dd3410ed9f0dc147840e45ca9797785272928d4be3f0e69e3be4" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-pp311-pypy311_pp73-macosx_11_0_arm64.whl", hash = "sha256:b1cac6a4b0252b8811d60b6d8d0f157c0fdfed379ac89c25a914e6346cf355a1" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-pp311-pypy311_pp73-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:f1704c9e041f2b1dc38f5be4552e141e1432fba3dd52c72eeffd5bc2db04dc65" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setproctitle/1.3.7/setproctitle-1.3.7-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:b08b61976ffa548bd5349ce54404bf6b2d51bd74d4f1b241ed1b0f25bce09c3a" },
-]
-
-[[package]]
 name = "setuptools"
-version = "82.0.1"
+version = "80.10.2"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setuptools/82.0.1/setuptools-82.0.1.tar.gz", hash = "sha256:7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setuptools/80.10.2/setuptools-80.10.2.tar.gz", hash = "sha256:8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setuptools/82.0.1/setuptools-82.0.1-py3-none-any.whl", hash = "sha256:a59e362652f08dcd477c78bb6e7bd9d80a7995bc73ce773050228a348ce2e5bb" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/setuptools/80.10.2/setuptools-80.10.2-py3-none-any.whl", hash = "sha256:95b30ddfb717250edb492926c92b5221f7ef3fbcc2b07579bcd4a27da21d0173" },
 ]
 
 [[package]]
@@ -3180,8 +2905,7 @@ dependencies = [
     { name = "numba" },
     { name = "numpy" },
     { name = "pandas" },
-    { name = "pyarrow", version = "12.0.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform == 'darwin'" },
-    { name = "pyarrow", version = "23.0.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform != 'darwin'" },
+    { name = "pyarrow" },
     { name = "pyarrow-hotfix" },
     { name = "scipy" },
     { name = "typing-extensions" },
@@ -3312,8 +3036,7 @@ dependencies = [
     { name = "attrs" },
     { name = "numba" },
     { name = "pandas" },
-    { name = "pyarrow", version = "12.0.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform == 'darwin'" },
-    { name = "pyarrow", version = "23.0.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform != 'darwin'" },
+    { name = "pyarrow" },
     { name = "pyarrow-hotfix" },
     { name = "scanpy" },
     { name = "scipy" },
@@ -3367,75 +3090,55 @@ wheels = [
 
 [[package]]
 name = "torch"
-version = "2.8.0"
+version = "2.4.0"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 resolution-markers = [
-    "platform_machine != 'x86_64' and sys_platform == 'linux'",
     "sys_platform == 'darwin'",
     "sys_platform != 'darwin' and sys_platform != 'linux'",
 ]
 dependencies = [
-    { name = "filelock", marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
-    { name = "fsspec", marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
-    { name = "jinja2", marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
-    { name = "networkx", marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
-    { name = "nvidia-cublas-cu12", version = "12.8.4.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-cuda-cupti-cu12", version = "12.8.90", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-cuda-nvrtc-cu12", version = "12.8.93", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-cuda-runtime-cu12", version = "12.8.90", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-cudnn-cu12", marker = "python_version < '0'" },
-    { name = "nvidia-cufft-cu12", version = "11.3.3.83", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-cufile-cu12", version = "1.13.1.3", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-curand-cu12", version = "10.3.9.90", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-cusolver-cu12", version = "11.7.3.90", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-cusparse-cu12", version = "12.5.8.93", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-cusparselt-cu12", marker = "python_version < '0'" },
-    { name = "nvidia-nccl-cu12", marker = "python_version < '0'" },
-    { name = "nvidia-nvjitlink-cu12", version = "12.8.93", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "nvidia-nvtx-cu12", version = "12.8.90", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "python_version < '0'" },
-    { name = "sympy", marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
-    { name = "triton", marker = "python_version < '0'" },
-    { name = "typing-extensions", marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
+    { name = "filelock", marker = "sys_platform != 'linux'" },
+    { name = "fsspec", marker = "sys_platform != 'linux'" },
+    { name = "jinja2", marker = "sys_platform != 'linux'" },
+    { name = "networkx", marker = "sys_platform != 'linux'" },
+    { name = "sympy", marker = "sys_platform != 'linux'" },
+    { name = "typing-extensions", marker = "sys_platform != 'linux'" },
 ]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torch/2.8.0/torch-2.8.0-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:220a06fd7af8b653c35d359dfe1aaf32f65aa85befa342629f716acb134b9710" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torch/2.8.0/torch-2.8.0-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:c12fa219f51a933d5f80eeb3a7a5d0cbe9168c0a14bbb4055f1979431660879b" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torch/2.8.0/torch-2.8.0-cp311-cp311-win_amd64.whl", hash = "sha256:8c7ef765e27551b2fbfc0f41bcf270e1292d9bf79f8e0724848b1682be6e80aa" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torch/2.8.0/torch-2.8.0-cp311-none-macosx_11_0_arm64.whl", hash = "sha256:5ae0524688fb6707c57a530c2325e13bb0090b745ba7b4a2cd6a3ce262572916" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torch/2.4.0/torch-2.4.0-cp311-cp311-win_amd64.whl", hash = "sha256:97730014da4c57ffacb3c09298c6ce05400606e890bd7a05008d13dd086e46b1" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torch/2.4.0/torch-2.4.0-cp311-none-macosx_11_0_arm64.whl", hash = "sha256:f169b4ea6dc93b3a33319611fcc47dc1406e4dd539844dcbd2dec4c1b96e166d" },
 ]
 
 [[package]]
 name = "torch"
-version = "2.8.0+cu126"
-source = { url = "https://download.pytorch.org/whl/cu126/torch-2.8.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl" }
+version = "2.4.0+cu124"
+source = { url = "https://download.pytorch.org/whl/cu124/torch-2.4.0%2Bcu124-cp311-cp311-linux_x86_64.whl" }
 resolution-markers = [
-    "platform_machine == 'x86_64' and sys_platform == 'linux'",
+    "sys_platform == 'linux'",
 ]
 dependencies = [
-    { name = "filelock", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "fsspec", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "jinja2", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "networkx", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cublas-cu12", version = "12.6.4.1", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cuda-cupti-cu12", version = "12.6.80", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cuda-nvrtc-cu12", version = "12.6.77", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cuda-runtime-cu12", version = "12.6.77", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "filelock", marker = "sys_platform == 'linux'" },
+    { name = "fsspec", marker = "sys_platform == 'linux'" },
+    { name = "jinja2", marker = "sys_platform == 'linux'" },
+    { name = "networkx", marker = "sys_platform == 'linux'" },
+    { name = "nvidia-cublas-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cuda-cupti-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cuda-nvrtc-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cuda-runtime-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "nvidia-cudnn-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cufft-cu12", version = "11.3.0.4", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cufile-cu12", version = "1.11.1.6", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-curand-cu12", version = "10.3.7.77", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cusolver-cu12", version = "11.7.1.2", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cusparse-cu12", version = "12.5.4.2", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-cusparselt-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cufft-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-curand-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cusolver-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-cusparse-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "nvidia-nccl-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-nvjitlink-cu12", version = "12.6.85", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "nvidia-nvtx-cu12", version = "12.6.77", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "sympy", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-nvjitlink-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "nvidia-nvtx-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "sympy", marker = "sys_platform == 'linux'" },
     { name = "triton", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://download.pytorch.org/whl/cu126/torch-2.8.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:542cdbf042aaf5d6ddbed43cb8cd8c4df1e586bebb1338f5dcba14fa52830d3c" },
+    { url = "https://download.pytorch.org/whl/cu124/torch-2.4.0%2Bcu124-cp311-cp311-linux_x86_64.whl", hash = "sha256:81397ff1c84a3f2c666d2627144ecac268665325726267e092a80113385ad3e8" },
 ]
 
 [package.metadata]
@@ -3444,29 +3147,25 @@ requires-dist = [
     { name = "fsspec" },
     { name = "jinja2" },
     { name = "networkx" },
-    { name = "nvidia-cublas-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.6.4.1" },
-    { name = "nvidia-cuda-cupti-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.6.80" },
-    { name = "nvidia-cuda-nvrtc-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.6.77" },
-    { name = "nvidia-cuda-runtime-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.6.77" },
-    { name = "nvidia-cudnn-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==9.10.2.21" },
-    { name = "nvidia-cufft-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==11.3.0.4" },
-    { name = "nvidia-cufile-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==1.11.1.6" },
-    { name = "nvidia-curand-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==10.3.7.77" },
-    { name = "nvidia-cusolver-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==11.7.1.2" },
-    { name = "nvidia-cusparse-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.5.4.2" },
-    { name = "nvidia-cusparselt-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==0.7.1" },
-    { name = "nvidia-nccl-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==2.27.3" },
-    { name = "nvidia-nvjitlink-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.6.85" },
-    { name = "nvidia-nvtx-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.6.77" },
+    { name = "nvidia-cublas-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.4.2.65" },
+    { name = "nvidia-cuda-cupti-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.4.99" },
+    { name = "nvidia-cuda-nvrtc-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.4.99" },
+    { name = "nvidia-cuda-runtime-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.4.99" },
+    { name = "nvidia-cudnn-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==9.1.0.70" },
+    { name = "nvidia-cufft-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==11.2.0.44" },
+    { name = "nvidia-curand-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==10.3.5.119" },
+    { name = "nvidia-cusolver-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==11.6.0.99" },
+    { name = "nvidia-cusparse-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.3.0.142" },
+    { name = "nvidia-nccl-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==2.20.5" },
+    { name = "nvidia-nvjitlink-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.4.99" },
+    { name = "nvidia-nvtx-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==12.4.99" },
     { name = "opt-einsum", marker = "extra == 'opt-einsum'", specifier = ">=3.3" },
-    { name = "optree", marker = "extra == 'optree'", specifier = ">=0.13.0" },
-    { name = "pyyaml", marker = "extra == 'pyyaml'" },
-    { name = "setuptools", marker = "python_full_version >= '3.12'" },
-    { name = "sympy", specifier = ">=1.13.3" },
-    { name = "triton", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==3.4.0" },
-    { name = "typing-extensions", specifier = ">=4.10.0" },
+    { name = "optree", marker = "extra == 'optree'", specifier = ">=0.11.0" },
+    { name = "sympy" },
+    { name = "triton", marker = "python_full_version < '3.13' and platform_machine == 'x86_64' and sys_platform == 'linux'", specifier = "==3.0.0" },
+    { name = "typing-extensions", specifier = ">=4.8.0" },
 ]
-provides-extras = ["optree", "opt-einsum", "pyyaml"]
+provides-extras = ["opt-einsum", "optree"]
 
 [[package]]
 name = "torch-geometric"
@@ -3490,14 +3189,32 @@ wheels = [
 ]
 
 [[package]]
+name = "torchdata"
+version = "0.7.1"
+source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
+dependencies = [
+    { name = "requests" },
+    { name = "torch", version = "2.4.0", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform != 'linux'" },
+    { name = "torch", version = "2.4.0+cu124", source = { url = "https://download.pytorch.org/whl/cu124/torch-2.4.0%2Bcu124-cp311-cp311-linux_x86_64.whl" }, marker = "sys_platform == 'linux'" },
+    { name = "urllib3" },
+]
+wheels = [
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torchdata/0.7.1/torchdata-0.7.1-cp311-cp311-macosx_10_13_x86_64.whl", hash = "sha256:91a78c677a3e4e2447d888587f7ea0b4ddde81ca95adf709ba0d3dc9a4e9542d" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torchdata/0.7.1/torchdata-0.7.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:fa325d628aa6125c6b46b6fa27c94150ca9276edbba1042d3eb3cd9c1039b5a9" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torchdata/0.7.1/torchdata-0.7.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d256535648dfb94d1226f233768c6798d1841edfdbf0a09b2115e6cbbda614f9" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torchdata/0.7.1/torchdata-0.7.1-cp311-cp311-win_amd64.whl", hash = "sha256:7460a5fa298e7cd5cef98e8e6455d481e5c73d39a462a89a38918389c8153e20" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torchdata/0.7.1/torchdata-0.7.1-py3-none-any.whl", hash = "sha256:9f9476a26987d90fa3f87cb09ec82b78ce6031ddcaa91851c9fa9f732a987ab8" },
+]
+
+[[package]]
 name = "torchmetrics"
 version = "1.2.0"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 dependencies = [
     { name = "lightning-utilities" },
     { name = "numpy" },
-    { name = "torch", version = "2.8.0", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "platform_machine != 'x86_64' or sys_platform != 'linux'" },
-    { name = "torch", version = "2.8.0+cu126", source = { url = "https://download.pytorch.org/whl/cu126/torch-2.8.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl" }, marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "torch", version = "2.4.0", source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }, marker = "sys_platform != 'linux'" },
+    { name = "torch", version = "2.4.0+cu124", source = { url = "https://download.pytorch.org/whl/cu124/torch-2.4.0%2Bcu124-cp311-cp311-linux_x86_64.whl" }, marker = "sys_platform == 'linux'" },
 ]
 sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/torchmetrics/1.2.0/torchmetrics-1.2.0.tar.gz", hash = "sha256:7eb28340bde45e13187a9ad54a4a7010a50417815d8181a5df6131f116ffe1b7" }
 wheels = [
@@ -3565,13 +3282,14 @@ wheels = [
 
 [[package]]
 name = "triton"
-version = "3.4.0"
+version = "3.0.0"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 dependencies = [
-    { name = "setuptools", marker = "sys_platform == 'linux'" },
+    { name = "filelock", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/triton/3.4.0/triton-3.4.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:7b70f5e6a41e52e48cfc087436c8a28c17ff98db369447bcaff3b887a3ab4467" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/triton/3.0.0/triton-3.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:5ce8520437c602fb633f1324cc3871c47bee3b67acf9756c1a66309b60e3216c" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/triton/3.0.0/triton-3.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:cd34f19a8582af96e6291d4afce25dac08cb2a5d218c599163761e8e0827208e" },
 ]
 
 [[package]]
@@ -3653,25 +3371,31 @@ wheels = [
 
 [[package]]
 name = "wandb"
-version = "0.15.12"
+version = "0.26.0"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
 dependencies = [
-    { name = "appdirs" },
     { name = "click" },
-    { name = "docker-pycreds" },
     { name = "gitpython" },
-    { name = "pathtools" },
+    { name = "packaging" },
+    { name = "platformdirs" },
     { name = "protobuf" },
-    { name = "psutil" },
+    { name = "pydantic" },
     { name = "pyyaml" },
     { name = "requests" },
     { name = "sentry-sdk" },
-    { name = "setproctitle" },
-    { name = "setuptools" },
+    { name = "typing-extensions" },
 ]
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.15.12/wandb-0.15.12.tar.gz", hash = "sha256:c344d92fb8044b072a6138afd9adc5d3801ad050cf11378fe2af2fe899dcca84" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0.tar.gz", hash = "sha256:0356853895b53fe110e2ed17a1d49c15405498f08e5fbc339deab384f2df45f1" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.15.12/wandb-0.15.12-py3-none-any.whl", hash = "sha256:75c57b5bb8ddae21d45a02f644628585bdd112fea686de3177099a0996f1c41c" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-macosx_12_0_arm64.whl", hash = "sha256:1ece94a2a5eda1d0e3a2d8a2fd28aa0187705d6efa5ac4c0b8680083583b7ec1" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-macosx_12_0_x86_64.whl", hash = "sha256:92f6f303fe2af50e3f711833a835150f9b4d8082874bfd9868cf15491ea2947e" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:a17aae051a31831388cff880251c1b5bc38fbf6a283a0ee7c543709e8e9633d1" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:28a14ffc014e523498d077dfde12839b7be586ca8c3190e72e7167c1aea6ee4c" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:fb9a63babeee044fecf65a4675f7dfb0efaea4986e498a3bc8f948558af877e7" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:3eb88fb556a64bf4492cf571bb851d47871901c096f0540d841ccb50f5cbeb66" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-win32.whl", hash = "sha256:362828d48d21dd4877e28fdce40421ebdfc16d1fe0b59e8371b12d75bbc3f1e7" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-win_amd64.whl", hash = "sha256:21a8346434fd30e1bc13a26b226fc29b6f33a1cb346d610cbcb4040c3b0e1f63" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wandb/0.26.0/wandb-0.26.0-py3-none-win_arm64.whl", hash = "sha256:99bd11974e9005d3a3f82e1fabfc4909ffa1fdede23a8839f5fbaea2f5be9033" },
 ]
 
 [[package]]
@@ -3721,22 +3445,22 @@ wheels = [
 
 [[package]]
 name = "wrapt"
-version = "2.2.0rc10"
+version = "2.1.2"
 source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10.tar.gz", hash = "sha256:654334906fbec684efa5fbd3a0c8753f128a9db2134ebed87d5b10768b799a1a" }
+sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2.tar.gz", hash = "sha256:3996a67eecc2c68fd47b4e3c564405a5777367adfd9b8abb58387b63ee83b21e" }
 wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:3d61bb93dff6a605bc9f74a9c80e1c43449b939226c568403145ec2422996e4c" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:fdce1de40216df2505d35fffc47ca52abae3fc94dd452478afa28258c1b1a6f5" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:c82c40e86a92e20576a6263799f3adf81e08f9162d8119ddc25e6d413482afa1" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:582c49501f6feaa063a520edde2b94a7dfde231eab981cf3ca1b689b16d629d1" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl", hash = "sha256:5ae98df99924c5f9f6f9bdf0feab765d2ca848041d39b9f758eea4cd7c901535" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:c10ef47939db9f7ba35aa371dd194dba468d0ec56273108a7e3cf2df1ccd336a" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-musllinux_1_2_riscv64.whl", hash = "sha256:c1bfac44eec4adb429f90a80a1911e9efe3a6b1159df92d410ca5ff06bb85d7e" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:ca7dc63028a782803b82a98b918f055f9210ae20691ca233378635fa3371ff4c" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-win32.whl", hash = "sha256:e56c1307b8a53e5eb10a66f1a911de4d50dece6aabf8634d2a3dd0a081872948" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-win_amd64.whl", hash = "sha256:6b47ccb8f33515af16a0cbdfddfa9c36a706de12956c638f24143ec08f813304" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-cp311-cp311-win_arm64.whl", hash = "sha256:3f093505afaccd298ed4c8408d76b8ec99ac064f505b15b9dc761635ba9af71a" },
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.2.0rc10/wrapt-2.2.0rc10-py3-none-any.whl", hash = "sha256:da196d360b9e8a1fd8af6a484e581c4e6c20d5c496c4001983156392af28c470" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:96159a0ee2b0277d44201c3b5be479a9979cf154e8c82fa5df49586a8e7679bb" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:98ba61833a77b747901e9012072f038795de7fc77849f1faa965464f3f87ff2d" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:767c0dbbe76cae2a60dd2b235ac0c87c9cccf4898aef8062e57bead46b5f6894" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:9c691a6bc752c0cc4711cc0c00896fcd0f116abc253609ef64ef930032821842" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl", hash = "sha256:f3b7d73012ea75aee5844de58c88f44cf62d0d62711e39da5a82824a7c4626a8" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:577dff354e7acd9d411eaf4bfe76b724c89c89c8fc9b7e127ee28c5f7bcb25b6" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-musllinux_1_2_riscv64.whl", hash = "sha256:3d7b6fd105f8b24e5bd23ccf41cb1d1099796524bcc6f7fbb8fe576c44befbc9" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:866abdbf4612e0b34764922ef8b1c5668867610a718d3053d59e24a5e5fcfc15" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-win32.whl", hash = "sha256:5a0a0a3a882393095573344075189eb2d566e0fd205a2b6414e9997b1b800a8b" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-win_amd64.whl", hash = "sha256:64a07a71d2730ba56f11d1a4b91f7817dc79bc134c11516b75d1921a7c6fcda1" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-cp311-cp311-win_arm64.whl", hash = "sha256:b89f095fe98bc12107f82a9f7d570dc83a0870291aeb6b1d7a7d35575f55d98a" },
+    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/wrapt/2.1.2/wrapt-2.1.2-py3-none-any.whl", hash = "sha256:b8fd6fa2b2c4e7621808f8c62e8317f4aae56e59721ad933bac5239d913cf0e8" },
 ]
 
 [[package]]
@@ -3832,13 +3556,4 @@ dependencies = [
 sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/zarr/3.1.5/zarr-3.1.5.tar.gz", hash = "sha256:fbe0c79675a40c996de7ca08e80a1c0a20537bd4a9f43418b6d101395c0bba2b" }
 wheels = [
     { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/zarr/3.1.5/zarr-3.1.5-py3-none-any.whl", hash = "sha256:29cd905afb6235b94c09decda4258c888fcb79bb6c862ef7c0b8fe009b5c8563" },
-]
-
-[[package]]
-name = "zipp"
-version = "3.23.1"
-source = { registry = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple" }
-sdist = { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/zipp/3.23.1/zipp-3.23.1.tar.gz", hash = "sha256:32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110" }
-wheels = [
-    { url = "https://aqemia-142655614335.d.codeartifact.us-east-1.amazonaws.com/pypi/main/simple/zipp/3.23.1/zipp-3.23.1-py3-none-any.whl", hash = "sha256:0b3596c50a5c700c9cb40ba8d86d9f2cc4807e9bedb06bcdf7fac85633e444dc" },
 ]
